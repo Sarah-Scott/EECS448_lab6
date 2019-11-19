@@ -14,5 +14,6 @@ int main()
 	Queue q;
 	Test tester;
 	tester.run();
+	std::cout<<"\n\n";
 	return(0);
 }

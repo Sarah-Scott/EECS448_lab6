@@ -18,13 +18,14 @@ void Test::run()
 	enqueueNotEmpty();
 	enqueuePeak();
 	enqueueDequeueEmpty();
-	enqueueChar();
+	emptyQueueOnHeap();
 	enqueueTwicePeek();
 	enqueueTwiceDequeuePeek();
 	enqueueTwicePeekOp();
 	enqueueNegativeInt();
 	enqueueTwiceDequeueTwiceEmpty();
 	dequeueEmpty();
+	enqueueOnHeap();
 }
 
 
@@ -74,12 +75,11 @@ void Test::enqueueDequeueEmpty()
 		std::cout<<"FAIL";
 }
 
-void Test::enqueueChar()
+void Test::emptyQueueOnHeap()
 {
-	Queue q;
-	q.enqueue('b');
-	std::cout<<"\nTest 5: Enqueue letter 'b' result in error: ";
-	if(q.isEmpty())
+	Queue* q = new Queue;
+	std::cout<<"\nTest 5: Create queue on heap is empty: ";
+	if(q->isEmpty())
 		std::cout<<"PASS";
 	else
 		std::cout<<"FAIL";
@@ -152,11 +152,29 @@ void Test::enqueueTwiceDequeueTwiceEmpty()
 void Test::dequeueEmpty()
 {
 	Queue q;
-	q.enqueue(1);
-	std::cout<<q.m_front;
+	std::cout<<"\nTest 11: Dequeue empty queue throws exception: ";
+	try 
+	{
+		q.dequeue();
+		std::cout<<"FAIL";
+	}
+	catch (...)
+	{
+		std::cout<<"PASS";
+	}
+	
 }
 
-
+void Test::enqueueOnHeap()
+{
+	Queue* q = new Queue;
+	q->enqueue(12);
+	std::cout<<"\nTest 12: Enqueue on heap is not empty: ";
+	if(q->isEmpty())
+		std::cout<<"FAIL";
+	else
+		std::cout<<"PASS";
+}
 
 
 

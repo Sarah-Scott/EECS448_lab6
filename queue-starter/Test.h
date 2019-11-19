@@ -14,13 +14,14 @@ class Test {
 		void enqueueNotEmpty();
 		void enqueuePeak();
 		void enqueueDequeueEmpty();
-		void enqueueChar();
+		void emptyQueueOnHeap();
 		void enqueueTwicePeek();
 		void enqueueTwiceDequeuePeek();
 		void enqueueTwicePeekOp();
 		void enqueueNegativeInt();
 		void enqueueTwiceDequeueTwiceEmpty();
 		void dequeueEmpty();
+		void enqueueOnHeap();
 };
 
 #endif

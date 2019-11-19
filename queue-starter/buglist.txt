@@ -1,0 +1,4 @@
+enqueue() puts elements to the front of the queue instead of the back
+	causes the queue to behave like a stack
+the destructor does not correctly delete nodes from the queue
+	there is memory leaks as long as the queue is not empty at the time of deletion
